@@ -6,7 +6,7 @@ const PORT = process.env.PORT;
 const app = express();
 
 app.get("/", (req, res) => {
-	res.status(200).send(`<h1>Mon super serveur deploye</h1>`);
+	res.status(200).send(`<h1>Mon super serveur deploye V2</h1>`);
 });
 
 app.listen(PORT, () => {
