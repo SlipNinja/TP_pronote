@@ -1,6 +1,6 @@
 import { pool } from "../config/db.js";
 
-export default class Prof {
+export default class User {
 	static async create_prof(email, password) {
 		const sql = `INSERT INTO users (email, password, role)
         VALUES (${email}, ${password}, 'PROFESSOR')`;
