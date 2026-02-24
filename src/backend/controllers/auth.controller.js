@@ -14,6 +14,7 @@ export const register = async (req, res) => {
 	const { email, password } = req.body;
 
 	const existing = await User.find_by_email(email);
+	console.log(existing);
 	if (existing) return res.status(409).json({ message: "email deja existant" });
 
 	const hashed = await argon2.hash(password);
