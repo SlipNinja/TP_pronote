@@ -1,13 +1,13 @@
 import express from "express";
 import "dotenv/config";
-import { pool } from "./config/db.js";
+import auth_router from "./routes/auth.route.js";
 
 const PORT = process.env.PORT;
 const app = express();
 
-app.get("/", (req, res) => {
-	res.status(200).send(`<h1>Mon super serveur deploye V3</h1>`);
-});
+app.use(express.json());
+
+app.use("/api/auth", auth_router);
 
 app.listen(PORT, () => {
 	console.log(`Serveur lancé sur http://localhost:${PORT}`);
